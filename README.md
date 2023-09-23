@@ -1,1 +1,2 @@
-# Perpina_Juan-Millorant_comptador
+# Activitat 1: Millorant el comptador
+####Juan Perpiña Piles

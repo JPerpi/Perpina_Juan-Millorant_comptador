@@ -1,5 +1,6 @@
 # Activitat 1: Millorant el comptador
 ## 1. Anàlisi de l’estructura del projecte
+
   El projecte consisteix en un comptador de clics, usa com a llenguatge de programació Kotlin.
   
   La seua estructura aquesta formada per tres carpetes principals que són: 
@@ -8,6 +9,7 @@
     -La carpeta res on es troben els recursos que usarà l'aplicació
 
   ###### “Si volguera afegir una nova activitat, sería suficient crear el fitxer de layout i el fitxer Kotlin amb la classe?”
+  
   A part de crear els fitxer *layout i el fitxer amb la classe s'hauria de modificar el *AndroidManifest.*xml
   perquè si no l'aplicació no detectaria que has creat una nova activitat
 

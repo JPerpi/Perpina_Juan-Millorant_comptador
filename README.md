@@ -11,9 +11,34 @@
   #### “Si volguera afegir una nova activitat, sería suficient crear el fitxer de layout i el fitxer Kotlin amb la classe?”
   
   A part de crear els fitxer *layout i el fitxer amb la classe s'hauria de modificar el *AndroidManifest.*xml
-  perquè si no l'aplicació no detectaria que has creat una nova activitat
+  perquè si no l'aplicació no detectaria que has creat una nova activitat.
 
-## Análisi del clicle de vida i el problema de la pèrdua d’estat
+## 2. Análisi del clicle de vida i el problema de la pèrdua d’estat
+
+El comptador es reinicia al girar la pantalla pel fet que android al girar la pantalla no guarda l'estat de l'app,
+a més no s'ha aplicat un control per a evitar que això succeïsca.
+Per a evitar-ho introduirem aquest codi perquè guarde l'estat de l'app abans de girar-lo
+
+      'override fun onSaveInstanceState(estat: Bundle) {
+        super.onSaveInstanceState(estat)
+        // Codi per a guardar l'estat
+        estat.putInt("Comptador", comptador)
+        val textViewContador=findViewById<TextView>(R.id.textViewComptador)
+        textViewContador.setText(comptador.toString())
+    }'
+
+I aquest per a restaurar l'estat guardat
+
+      'override fun onRestoreInstanceState(estat: Bundle) {
+        super.onRestoreInstanceState(estat)
+        // Codi per a guardar l'estat
+        comptador=estat.getInt("Comptador")
+        val textViewContador=findViewById<TextView>(R.id.textViewComptador)
+        textViewContador.setText(comptador.toString())
+    }'
+
+
+
 ## Solució a la pèrdua d’estat
 ## Ampliant la funcionalitat amb decrements i Reset
 ## Canvis per implementar el View Binding
